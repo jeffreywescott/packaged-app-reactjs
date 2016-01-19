@@ -2,7 +2,7 @@
   "name": "packaged-app-reactjs",
   "version": "0.1.0",
   "description": "Packaged React.js App",
-  "main": "server.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LearnersGuild/packaged-app-reactjs.git"
@@ -16,7 +16,7 @@
     "build:server": "./node_modules/.bin/babel src/server.js --out-file lib/server.js",
     "build": "npm run build:client && npm run build:server",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx .",
-    "prepublish": "npm run build",
+    "prepublish": "NODE_ENV=production npm run build",
     "start": "node lib/server"
   },
   "license": "ISC",
@@ -48,7 +48,6 @@
     "react-dom": "^0.14.3",
     "resolve-url-loader": "^1.4.3",
     "sass-loader": "^3.1.2",
-    "sass-resources-loader": "^1.0.1",
     "serve-static": "^1.10.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.9",
