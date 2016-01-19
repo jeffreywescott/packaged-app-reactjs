@@ -13,6 +13,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'lib'),
     filename: 'app.js',
+    libraryTarget: 'this',
   },
 
   devtool: '#cheap-module-eval-source-map',

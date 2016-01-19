@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import { render as reactRender } from 'react-dom'
+import { renderToString as reactRenderToString } from 'react-dom/server'
 
 import styles from './main.scss'
 
@@ -11,8 +12,10 @@ export class HelloWorld extends Component {
   }
 }
 
-export default function render() {
-  ReactDOM.render(<HelloWorld />, document.getElementById('root'))
+export function render() {
+  if (typeof document === 'undefined') {
+    return reactRenderToString(<HelloWorld />)
+  } else {
+    reactRender(<HelloWorld />, document.getElementById('root'))
+  }
 }
-
-if (!module.parent) render()
