@@ -12,12 +12,12 @@
     "email": "jeffrey@learnersguild.org"
   },
   "scripts": {
-    "build:client": "mkdir -p dist && ./node_modules/.bin/webpack --config webpack-$NODE_ENV-config.js",
-    "build:server": "./node_modules/.bin/babel --presets react,es2015 server.babel.js --out-file server.js",
+    "build:client": "mkdir -p lib && ./node_modules/.bin/webpack --config webpack-$NODE_ENV-config.js",
+    "build:server": "./node_modules/.bin/babel server.babel.js --out-file lib/server.js",
     "build": "npm run build:client && npm run build:server",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx .",
-    "postinstall": "npm run build",
-    "start": "npm run build && node server"
+    "prepublish": "npm run build",
+    "start": "node lib/server"
   },
   "license": "ISC",
   "private": false,

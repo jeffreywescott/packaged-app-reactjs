@@ -24,7 +24,7 @@ function start() {
     const webpack = require('webpack')
     const webpackDevMiddleware = require('webpack-dev-middleware')
     const webpackHotMiddleware = require('webpack-hot-middleware')
-    const webpackConfig = require('./webpack-development-config')
+    const webpackConfig = require('../webpack-development-config')
     const compiler = webpack(webpackConfig)
     app.use(webpackDevMiddleware(compiler, {
       noInfo: true,
@@ -38,10 +38,8 @@ function start() {
   }
 
   // Use this middleware to server up static files
-  app.use(serveStatic(path.join(__dirname, '../dist')))
-  app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-  })
+  app.use(serveStatic(__dirname))
+  app.use(serveStatic(path.join(__dirname, '..', 'public')))
 
   app.listen(serverPort, (error) => {
     if (error) {

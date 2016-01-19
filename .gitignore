@@ -2,6 +2,4 @@
 *.log
 .env
 coverage
-dist
 node_modules
-server.js

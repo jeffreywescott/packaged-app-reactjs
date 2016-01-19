@@ -10,7 +10,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, '..', 'dist'),
+    path: path.join(__dirname, '..', 'lib'),
     filename: 'app.js',
   },
 
@@ -40,9 +40,6 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel',
         exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015'],
-        },
       },
       {
         test: /\.css$/,

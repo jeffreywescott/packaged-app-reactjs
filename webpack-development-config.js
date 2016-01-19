@@ -11,7 +11,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, '..', 'dist'),
+    path: path.join(__dirname, '..', 'lib'),
     filename: 'app.js',
   },
 
@@ -50,7 +50,6 @@ module.exports = {
               }],
             }],
           ],
-          presets: ['react', 'es2015'],
         },
       },
       {
