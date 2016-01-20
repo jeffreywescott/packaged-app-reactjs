@@ -22,6 +22,7 @@ This is a pretty "standard" client-side React.js application, with a few things 
 1. It is written in ES2015 and uses [babel](https://babeljs.io) for compatibility.
 2. It uses [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) and [react-transform-hmr](https://github.com/gaearon/react-transform-hmr) for hot-module reloading.
 3. The main JavaScript script loaded by the application doesn't run any code to render the app. Instead, it uses an exported `render` function that gets invoked after the script is included. See [`index.html`](index.html) for details. To make this work, webpack was configured with a `libraryTarget` of `this`.
+4. While it pulls-in support for running in a development environment, it's not really meant to be deployed _except_ as an NPM package.
 
 ## Getting Started
 
