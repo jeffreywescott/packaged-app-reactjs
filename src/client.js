@@ -12,10 +12,10 @@ export class HelloWorld extends Component {
   }
 }
 
-export function render() {
+export function render(elementId = 'root') {
   if (typeof document === 'undefined') {
     return reactRenderToString(<HelloWorld />)
   } else {
-    reactRender(<HelloWorld />, document.getElementById('root'))
+    reactRender(<HelloWorld />, document.getElementById(elementId))
   }
 }
